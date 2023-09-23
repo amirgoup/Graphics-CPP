@@ -1,0 +1,12 @@
+To run graphics in CodeBlocks, you need to include the graphics.h header file in your program. However, this header file is not available in the library folder of CodeBlocks by default, so you need to set up the winBGIm graphics library to compile graphics code on CodeBlocks 1.
+
+Here are the steps to include graphics.h in CodeBlocks:
+
+1. Download the winBGIm graphics library from http://winbgim.codecutter.org/ or use this https://github.com/ki9gpin/WinBGIm-64 for a recent build of the library that brings 64-bit compatibility.
+2. Extract the downloaded file. You will find three files: graphics.h, winbgim.h, and libbgi.a.
+3. Copy and paste graphics.h and winbgim.h files into the include folder of your compiler directory. If you have Code::Blocks installed in C drive of your computer, go through: Disk C >> Program Files >> CodeBlocks >> MinGW >> include. Paste these two files there.
+4. Copy and paste libbgi.a to the lib folder of your compiler directory.
+5. Open Code::Blocks. Go to Settings >> Compiler >> Linker settings.
+6. In that window, click the Add button under the “Link libraries” part, and browse. Select the libbgi.a file copied to the lib folder in step 4.
+7. In right part (i.e., other linker options) paste commands -lbgi -lgdi32 -lcomdlg32 -luuid -loleaut32 -lole32.
+8. Click OK.
